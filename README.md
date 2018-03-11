@@ -25,7 +25,7 @@ password: testpassword
    
  <b> To get followers </b>
    
- 6. once eeverything done, you can request followers via /getfollowers/{user_id}/{next_id}
+ 6. once everything done, you can request followers via /getfollowers/{user_id}/{next_id}
  
  
  <b> You need to run laravel cron every minute in order to auto comment, like, follow to work.</a>
