@@ -1,0 +1,54 @@
+.customForm {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.customForm fieldset {
+    flex: 1;
+    border: 1px solid #aaa;
+    margin: 0.5em;
+    padding: 4px 4px;
+}
+
+.customForm fieldset legend {
+    padding: 5px 20px;
+    border: 1px solid #aaa;
+    font-weight: bold;
+}
+
+.customForm fieldset.two {
+    flex: 2 100%;
+}
+
+
+.customForm fieldset.name legend {
+    background: #bfffbf;
+}
+
+.customForm fieldset.office legend {
+    background: #ffffbf;
+}
+
+.customForm fieldset.hr legend {
+    background: #ffbfbf;
+}
+
+.customForm div.DTE_Field {
+    padding: 5px;
+}
+
+table.dataTable{
+  width: 95%;
+}
+
+.dataTables_filter, .dataTables_info, .dataTables_paginate{
+  margin: 10px 10px;
+}
+
+div.DTED_Lightbox_Wrapper{
+  z-index: 9999;
+}
+
+table.dataTable.nowrap th, table.dataTable.nowrap td{
+  white-space: wrap;
+}
