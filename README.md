@@ -1,4 +1,4 @@
-
+[grd_count user="User" repo="MyRepo"]
 
 This is laravel framework with liamcottle Instagram private library.
 
