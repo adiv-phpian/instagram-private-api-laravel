@@ -29,8 +29,6 @@ password: testpassword
  
  
  <b> You need to run laravel cron every minute in order to auto comment, like, follow to work.</a>
+
  
- 
- To tip 
- 
- <b>paypal.me/muthukrishnanc</b>
+ <a href="paypal.me/muthukrishnanc"> Tip<a>
