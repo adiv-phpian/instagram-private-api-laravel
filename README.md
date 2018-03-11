@@ -1,1 +1,25 @@
-# My project's README
+
+
+This is laravel framework with liamcottle Instagram private library.
+
+This application can do instagram username password login.
+
+To install this application.
+
+1. Clone and change database information on .env file
+2. Migrate database and seed it
+3. Login via /alogin
+
+email: admin@admin.com
+password: testpassword
+
+4. Add proxies. Goto admin panel and add proxies. No problem, if you are using small application. By default, it will have one proxy.
+
+5. Now goto main page of the app.
+
+   Sigin with instagram username and password. If it's ask for verification code, verify with the code.
+   
+   
+ <b> To get followers </b>
+   
+ 6. once eeverything done, you can request followers via /getfollowers/{user_id}/{next_id}
