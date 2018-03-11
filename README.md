@@ -2,6 +2,9 @@
 
 This is laravel framework with liamcottle Instagram private library.
 
+This is auto likes, follows, comments sharing application. You can use this for any purpose. The new instagram checkpoint has been bit solved with this code.
+
+
 This application can do instagram username password login.
 
 To install this application.
@@ -23,3 +26,11 @@ password: testpassword
  <b> To get followers </b>
    
  6. once eeverything done, you can request followers via /getfollowers/{user_id}/{next_id}
+ 
+ 
+ <b> You need to run laravel cron every minute in order to auto comment, like, follow to work.</a>
+ 
+ 
+ To tip 
+ 
+ <b>paypal.me/muthukrishnanc</b>
