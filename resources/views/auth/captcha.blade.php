@@ -34,7 +34,7 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="/">hublagram.xyz</a>
+	            <a class="navbar-brand" href="/">Instagram private API</a>
 			</div>
 
 		</div>

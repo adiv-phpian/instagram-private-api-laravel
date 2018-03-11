@@ -14,9 +14,16 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
 
         DB::table('users')->insert([
-                'name' => 'alex',
-                'email' => 'alex@hublagram.in',
+                'name' => 'Admin',
+                'email' => 'admin@admin.com',
                 'password' => '$2y$10$riPOobLnGHIR6eT4E1kGROjsyqdOVoDX8yYEJSso3W7oy5.OXtn/y',
             ]);
+
+            DB::table('ip_lists')->insert([
+                    'ip' => '186.227.8.21',
+                    'port' => '3128',
+                    'username' => '',
+                    'password' => ''
+                ]);
     }
 }

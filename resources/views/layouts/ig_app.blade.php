@@ -5,7 +5,7 @@
       <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('ct/img/apple-icon.png') }}">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-      <title>hublagram.xyz - @yield('title')</title>
+      <title>Instagram private API - @yield('title')</title>
 
       <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
       <meta name="viewport" content="width=device-width" />
@@ -42,7 +42,7 @@
                         <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
                    </button>
-                    <a class="navbar-brand" href="/">hublagram.xyz</a>
+                    <a class="navbar-brand" href="/">Instagram private API</a>
                     <div class="collapse navbar-collapse" id="navbar-menu-icon">
                         <ul class="navbar-nav ml-auto">
 
