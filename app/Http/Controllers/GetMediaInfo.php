@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\IPModel;
 
-class getFollowers extends Controller
+class GetMediaInfo extends Controller
 {
     //
 
@@ -17,15 +17,19 @@ class getFollowers extends Controller
       $instagram->setProxy($user->ip);
       $instagram->initFromSavedSession($user->user_session);
 
-      $response = $instagram->getUserFollowers($user_id, $max_id);
+      $response = $instagram->getUserFeed($user_id, $max_id);
 
-      $followers["followers"] = $response->getFollowers();
-      $followers['next_id'] = $response->getNextMaxId();
+      $items = $response->getItems();
+
+      $next_id = 0;
+
+      if($response->isMoreAvailable()) $next_id = end($items)->getId();
+
+      $followers["media"] = $items;
+      $followers['next_id'] = $next_id;
 
       print_R(json_encode($followers));
 
-      if($response->getNextMaxId() != null){
-        //echo "<a href='/getfollowers/".$user_id."/".$response->getNextMaxId()."' > Next page</a>";
-      }
+
     }
 }

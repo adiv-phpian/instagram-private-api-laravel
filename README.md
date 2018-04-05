@@ -1,4 +1,5 @@
 
+Composer is not supported. Download as a ZIP and use it.
 
 This is laravel framework with liamcottle Instagram private library.
 
