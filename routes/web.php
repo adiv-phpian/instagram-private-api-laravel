@@ -12,6 +12,11 @@
 */
 
 Route::get('test', 'Test@index');
+
+Route::get('getuser/{user_id}', 'GetUserInfo@get');
+Route::get('getmedias/{user_id}', 'GetMediaInfo@get');
+Route::get('getmedias/{user_id}/{media_id}', 'GetMediaInfo@get');
+
 Route::get('getfollowers/{user_id}', 'getFollowers@get');
 Route::get('getfollowers/{user_id}/{max_id}', 'getFollowers@get');
 
