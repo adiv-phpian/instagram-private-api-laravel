@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             ]);
 
             DB::table('ip_lists')->insert([
-                    'ip' => '186.227.8.21',
-                    'port' => '3128',
+                    'ip' => '35.230.154.112',
+                    'port' => '80',
                     'username' => '',
                     'password' => ''
                 ]);
