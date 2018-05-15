@@ -21,15 +21,12 @@ class IPController extends Controller
 
       $user = IPModel::where("username", $request->username)->with('ip')->get();
 
-
       if (count($user)  == 1 && Hash::check($request->password, $user[0]->password) && $user[0]->active < date("Y-m-d H:i:s")) {
           // The passwords match...
           if($this->check_login_and_set_session($user, $request) == true){
              return redirect("/");
           }
       }
-
-
 
       if(!Session::has('proxy')){
 
@@ -128,7 +125,7 @@ class IPController extends Controller
           $instagram->initFromSavedSession($user->user_session);
 
           $userInfo = $instagram->getUserInfo($user->instagram_user_id);
-
+dd($userInfo);
           if(!isset($userInfo->user)) return false;
 
           $this->set_session_for_user($user->instagram_user_id, false, $userInfo, false);
@@ -263,15 +260,15 @@ class IPController extends Controller
       return redirect("/");
     }
 
-    public function logout_instagram(){
+    public function instagram_logout(){
 
-      $user = IPModel::where(['instagram_user_id' => \Session::get('pk')])->with('ip')->get();
+      $user = IPModel::where(['instagram_user_id' => \Session::get('pk')])->with('ip')->get()->first();
 
       $instagram = new \Instagram\Instagram();
       $instagram->setProxy($user->ip);
       $instagram->initFromSavedSession($user->user_session);
 
-      $instagram->logout();
+      $response = $instagram->logout();
 
       Session::forget("pk");
       Session::forget("proxy");
@@ -280,9 +277,22 @@ class IPController extends Controller
 
     public function get_random_proxy($id = 0){
       if($id > 0){
-        $ip = ip_list::where('id', $id)->get()[0];
+        $ip = ip_list::where('id', $id)->get();
+
+        if(count($ip) == 0){
+           return view("auth.ig_login", ['error' => "There's no proxy available to add your account, contact your admin"]);
+        }
+
+        $ip = $ip[0];
+
       }else{
-        $ip = ip_list::orderBy('updated_at', 'ASC')->take(1)->get()[0];
+        $ip = ip_list::orderBy('updated_at', 'ASC')->take(1)->get();
+
+        if(count($ip) == 0){
+           return view("auth.ig_login", ['error' => "There's no proxy available to add your account, contact your admin"]);
+        }
+
+        $ip = $ip[0];
         ip_list::where('id', $ip->id)->update(['updated_at' => date("Y-m-d H:i:s")]);
       }
 

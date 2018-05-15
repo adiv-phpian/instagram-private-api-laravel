@@ -71,6 +71,8 @@ Route::group(['middleware' => [/*'CheckForBot',*/ 'CheckInstagramLogin']], funct
   //logout
   Route::get('logout', 'IPController@logout');
 
+  Route::get('instagram_logout', 'IPController@instagram_logout');
+
 });
 
 Auth::routes();
