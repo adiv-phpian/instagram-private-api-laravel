@@ -263,6 +263,21 @@ class IPController extends Controller
       return redirect("/");
     }
 
+    public function logout_instagram(){
+
+      $user = IPModel::where(['instagram_user_id' => \Session::get('pk')])->with('ip')->get();
+
+      $instagram = new \Instagram\Instagram();
+      $instagram->setProxy($user->ip);
+      $instagram->initFromSavedSession($user->user_session);
+
+      $instagram->logout();
+
+      Session::forget("pk");
+      Session::forget("proxy");
+      return redirect("/");
+    }
+
     public function get_random_proxy($id = 0){
       if($id > 0){
         $ip = ip_list::where('id', $id)->get()[0];
