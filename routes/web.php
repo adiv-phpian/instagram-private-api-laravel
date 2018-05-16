@@ -11,7 +11,22 @@
 |
 */
 
-Route::get('test', 'Test@index');
+//Route::get('test', 'Test@index');
+
+// Authentication Routes...
+$this->get('alogin', 'Auth\LoginController@showLoginForm')->name('alogin');
+$this->post('alogin', 'Auth\LoginController@login');
+$this->post('alogout', 'Auth\LoginController@logout')->name('alogout');
+
+// Registration Routes...
+$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+$this->post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('getuser/{user_id}', 'GetUserInfo@get');
 Route::get('getmedias/{user_id}', 'GetMediaInfo@get');
@@ -74,7 +89,5 @@ Route::group(['middleware' => [/*'CheckForBot',*/ 'CheckInstagramLogin']], funct
   Route::get('instagram_logout', 'IPController@instagram_logout');
 
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

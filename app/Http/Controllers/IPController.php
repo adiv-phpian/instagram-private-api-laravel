@@ -125,7 +125,7 @@ class IPController extends Controller
           $instagram->initFromSavedSession($user->user_session);
 
           $userInfo = $instagram->getUserInfo($user->instagram_user_id);
-dd($userInfo);
+
           if(!isset($userInfo->user)) return false;
 
           $this->set_session_for_user($user->instagram_user_id, false, $userInfo, false);
@@ -248,8 +248,6 @@ dd($userInfo);
       $instagram->setAccessToken($token);
 
       $user = $instagram->getUser();
-
-      print_R($token);dd($user);
 
       return view('auth/facebook_login');
     }
