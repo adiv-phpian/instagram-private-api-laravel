@@ -38,4 +38,4 @@ This is automated application built to share likes between community of users. U
 
 <b> Raise issue or request new functionalities. I am happy to work.</b>
  
- <b> <a href="https://paypal.me/muthukrishnanc/5"> If you like my work, send me $5.<a> </b>
+ <b> <a href="https://paypal.me/muthukrishnanc/5"> If you like my work, donate $5 to improve this script.<a> </b>
