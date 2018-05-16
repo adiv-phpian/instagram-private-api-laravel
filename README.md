@@ -14,10 +14,9 @@ This is automated application built to share likes between community of users. U
 <b> To install this application.</b>
 
 1. Clone this repo.
-2. run composer update from command line on the directory
-3. change database information on .env file
-2. Migrate database using `php artisan migrate` and seed it using command php artisan db:seed
-3. Login admin via /alogin
+2. change database information on .env file
+3. Migrate database using `php artisan migrate` and seed it using command php artisan db:seed
+4. Login admin via /alogin
 
 <b>
    email: admin@admin.com
@@ -39,4 +38,4 @@ This is automated application built to share likes between community of users. U
 
 <b> Raise issue or request new functionalities. I am happy to work.</b>
  
- <b> <a href="https://paypal.me/muthukrishnanc/5"> If you like my work, you can donate $5.<a> </b>
+ <b> <a href="https://paypal.me/muthukrishnanc/5"> If you like my work, send me $5.<a> </b>
